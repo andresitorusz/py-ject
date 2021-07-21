@@ -1,6 +1,7 @@
 from random import randint
 from point import Point
 from rectangle import Rectangle
+from colorama import Fore
 
 
 def main():
@@ -22,15 +23,15 @@ def guess(rectangle):
     user_area = float(input("Guess rectangle area: "))
 
     if user_point.falls_in_rectangle(rectangle):
-        print("Your point was inside rectangle.")
+        print(Fore.GREEN + "Your point was inside rectangle.")
     else:
-        print("Your point was outside rectangle.")
+        print(Fore.RED + "Your point was outside rectangle.")
 
     if user_area == rectangle.area():
-        print("Great! Your area guess was true. The area is {}."
+        print(Fore.GREEN + "Great! Your area guess was true. The area is {}."
               .format(rectangle.area()))
     else:
-        print("Wrong area guess! The area is {}."
+        print(Fore.RED + "Wrong area guess! The area is {}."
               .format(rectangle.area()))
 
 
