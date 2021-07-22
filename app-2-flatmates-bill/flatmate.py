@@ -1,4 +1,8 @@
 class Flatmate:
+    """
+    Creates a flatmate person who lives in the flat
+    and pays a share of the bill.
+    """
 
     def __init__(self, name, days_in_apart):
         self.name = name
