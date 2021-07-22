@@ -2,6 +2,7 @@ from colorama import Fore
 
 from bill import Bill
 from flatmate import Flatmate
+from pdf_report import PdfReport
 
 
 def main():
@@ -15,6 +16,9 @@ def main():
 
     print(f"{flatmate.name} pays: ${flatmate.pays(bill, co_flatmate)}")
     print(f"{co_flatmate.name} pays: ${co_flatmate.pays(bill, flatmate)}")
+
+    pdf_report = PdfReport(filename=f"{period}.pdf")
+    pdf_report.generate(flatmate, co_flatmate, bill)
 
 
 def fill_the_form():
